@@ -5,14 +5,14 @@ import { FlatList, Image, RefreshControl, Text, View } from "react-native";
 import { images } from "../../constants";
 import useAppwrite from "../../lib/useAppwrite";
 import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
-import { EmptyState, InfoBox, SearchInput, Trending, VideoCard } from "../../components";
+import { EmptyState, SearchInput, Trending, VideoCard } from "../../components";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 
 const Home = () => {
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
-  const { user, setUser, setIsLogged } = useGlobalContext();
+  const { user } = useGlobalContext();
 
 
 
@@ -41,14 +41,17 @@ const Home = () => {
           <View className="flex my-6 px-4 space-y-6">
             <View className="flex justify-between items-start flex-row mb-6">
               <View>
-                <Text className="font-pmedium text-sm text-gray-100 text-2xl font-psemibold text-white">
+                <Text className="font-pmedium text-sm text-gray-100 text-3xl font-psemibold text-white">
                   Bienvenido!
                 </Text>
-            <InfoBox
-              title={user?.username}
+            <Text
+              className="text-2xl font-psemibold text-white"
               containerStyles="mt-5"
               titleStyles="text-lg"
-            />
+            >
+              {user?.username}
+            </Text>
+
               </View>
 
               <View className="mt-1.5">
