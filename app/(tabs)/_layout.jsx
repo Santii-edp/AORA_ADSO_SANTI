@@ -48,28 +48,28 @@ const TabLayout = () => {
         <Tabs.Screen
           name="home"
           options={{
-            title: "Home",
+            title: "Inicio",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 icon={icons.home}
                 color={color}
-                name="Home"
+                name="Inicio"
                 focused={focused}
               />
             ),
           }}
         />
         <Tabs.Screen
-          name="bookmark"
+          name="Favoritos"
           options={{
-            title: "Bookmark",
+            title: "Favoritos",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={icons.bookmark}
+                icon={icons.heart}
                 color={color}
-                name="Bookmark"
+                name="Favoritos"
                 focused={focused}
               />
             ),
@@ -77,15 +77,15 @@ const TabLayout = () => {
         />
 
         <Tabs.Screen
-          name="create"
+          name="Crear"
           options={{
-            title: "Create",
+            title: "Crear",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 icon={icons.plus}
                 color={color}
-                name="Create"
+                name="Crear"
                 focused={focused}
               />
             ),
@@ -100,7 +100,7 @@ const TabLayout = () => {
               <TabIcon
                 icon={icons.profile}
                 color={color}
-                name="Profile"
+                name="Perfil"
                 focused={focused}
               />
             ),

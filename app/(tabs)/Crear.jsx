@@ -95,9 +95,9 @@ const Create = () => {
         <Text className="text-2xl text-white font-psemibold">Subir video</Text>
 
         <FormField
-          title="Video Title"
+          title="Título del vídeo"
           value={form.title}
-          placeholder="Give your video a catchy title..."
+          placeholder="Dele a tu vídeo un título atractivo..."
           handleChangeText={(e) => setForm({ ...form, title: e })}
           otherStyles="mt-10"
         />
@@ -160,9 +160,9 @@ const Create = () => {
         </View>
 
         <FormField
-          title="AI Prompt"
+          title="Aviso de IA"
           value={form.prompt}
-          placeholder="The AI prompt of your video...."
+          placeholder="El mensaje de IA de tu vídeo..."
           handleChangeText={(e) => setForm({ ...form, prompt: e })}
           otherStyles="mt-7"
         />

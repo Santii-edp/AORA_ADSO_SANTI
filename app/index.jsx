@@ -49,13 +49,13 @@ const Welcome = () => {
           </View>
 
           <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-          Donde la creatividad se encuentra con la innovación: Embárquese en un viaje sin límites
-          Exploración con Aora
+            Donde la creatividad se encuentra con la innovación: Embárquese en
+            un viaje sin límites Exploración con Aora
           </Text>
 
           <CustomButton
-            title="Continue with Email"
-            handlePress={() => router.push("/sign-in")}
+            title="Continuar con email"
+            handlePress={() => router.push("/home")}
             containerStyles="w-full mt-7"
           />
         </View>

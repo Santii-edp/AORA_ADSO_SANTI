@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
+import { View, Text, ScrollView, Dimensions, Alert, Image,TouchableOpacity } from "react-native";
+import { icons } from "../../constants";
 
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
@@ -37,9 +38,26 @@ const SignIn = () => {
       setSubmitting(false);
     }
   };
+  const logout = async () => {
+    await signOut();
+    setUser(null);
+    setIsLogged(false);
 
+    router.replace("/sign-in");
+  };
   return (
+
     <SafeAreaView className="bg-primary h-full">
+                  <TouchableOpacity
+              onPress={logout}
+              className="flex w-full items-end mb-10"
+            >
+              <Image
+                source={icons.logout}
+                resizeMode="contain"
+                className="w-6 h-6"
+              />
+            </TouchableOpacity>
       <ScrollView>
         <View
           className="w-full flex justify-center h-full px-4 my-6"
@@ -54,7 +72,7 @@ const SignIn = () => {
           />
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-            Log in to Aora
+            Inicia Sesion en Aora!
           </Text>
 
           <FormField
@@ -87,7 +105,7 @@ const SignIn = () => {
               href="/sign-up"
               className="text-lg font-psemibold text-secondary"
             >
-              Signup
+              Resgistrate
             </Link>
           </View>
         </View>
